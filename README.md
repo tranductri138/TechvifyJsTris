@@ -1,2 +1,2 @@
 # TechvifyJsTris
-ngay dau tien :v :v :v
+ngay dau tien :v :v :v 6/9

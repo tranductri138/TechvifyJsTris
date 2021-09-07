@@ -4,25 +4,6 @@ class Student {
     this.age = age;
     this.className = className;
   }
-
-  get studentName() {
-    return this.name;
-  }
-  get studentAge() {
-    return this.age;
-  }
-  get studentTeacher() {
-    return this.className;
-  }
-  set studentName(name) {
-    this.name = name;
-  }
-  set studentAge(age) {
-    this.age = age;
-  }
-  set studentTeacher(teacher) {
-    this.className = teacher;
-  }
 }
 
 class ClassRoom {
@@ -30,26 +11,6 @@ class ClassRoom {
     this.teacherName = teacherName;
     this.className = className;
     this.students = students;
-  }
-
-  get teacherNameRoom() {
-    return this.teacherName;
-  }
-  get nameClassRoom() {
-    return this.className;
-  }
-  set nameClassRoom(name) {
-    this.nameClass = name;
-  }
-  set nameTeacherRoom(name) {
-    this.teacherName = name;
-  }
-  displayInfor() {
-    console.log(`teacher name ${this.teacherName}`);
-    console.log(`class name ${this.className}`);
-    console.log(`stundents  ${JSON.stringify(this.students)} `);
-    // phân tích array thành các chuỗi
-    console.log("----------------------");
   }
 }
 
@@ -65,6 +26,11 @@ let students = [
   new Student("Lam8", 23),
   new Student("Lam9", 23),
   new Student("Lam10", 23),
+  new Student("Lam11", 23),
+  new Student("Lam12", 23),
+  new Student("Lam13", 23),
+  new Student("Lam14", 23),
+  new Student("Lam15", 23),
 ];
 // tạo teacher
 let roomClass = [
@@ -79,26 +45,38 @@ let roomClass = [
     students[5],
     students[6],
   ]),
+  new ClassRoom("Tris", "ClassHistory", []),
 ];
 // check student va in infor
-function checkStudentNoClass() {
+function showInfo() {
   for (let i = 0; i < roomClass.length; i++) {
     if (roomClass[i].teacher === undefined) {
-      roomClass[i].displayInfor();
+      console.log(roomClass[i].className);
+      console.log(roomClass[i].teacherName);
+      console.log(roomClass[i].students);
     }
+    console.log("---------------------------------");
   }
 }
 
 // b1 push vao lop lisa , Monica
 // b2 kiem tra lop con thieu
 // b3 sau roi day 3 thang con lai
-function joinClass(roomC) {
+function joinClass(room) {
   for (let i = 0; i < students.length; i++) {
-    if (students[i].className === undefined && roomC.students.length < 5) {
-      roomC.students.push(students[i]);
+    if (students[i].className === undefined && room.students.length < 5) {
+      room.students.push(students[i]);
+      students[i].className = room.className;
     }
   }
 }
-joinClass(roomClass[0]);
-joinClass(roomClass[1]);
-checkStudentNoClass();
+// joinClass(roomClass[0]);
+// joinClass(roomClass[1]);
+// joinClass(roomClass[2]);
+function joinAuto() {
+  for (let i = 0; i < roomClass.length; i++) {
+    joinClass(roomClass[i]);
+  }
+}
+joinAuto();
+showInfo();

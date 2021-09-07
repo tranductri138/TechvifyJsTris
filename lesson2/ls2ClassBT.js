@@ -77,7 +77,7 @@ let roomTeacher = [
   new ClassRoom("Lisa", "ClassEnglish", []),
   new ClassRoom("Monica", "ClassMath", []),
 ];
-// check student
+// check student va in infor
 function checkStudentNoClass() {
   for (let i = 0; i < roomTeacher.length; i++) {
     if (roomTeacher[i].teacher === undefined) {

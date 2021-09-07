@@ -4,6 +4,9 @@ class Student {
     this.age = age;
     this.className = className;
   }
+  // joinClassOfStudent(className) {
+  //   this.className = className;
+  // }
 }
 
 class ClassRoom {
@@ -11,6 +14,11 @@ class ClassRoom {
     this.teacherName = teacherName;
     this.className = className;
     this.students = students;
+  }
+  display() {
+    console.log(this.teacherName);
+    console.log(this.className);
+    console.log(this.students);
   }
 }
 
@@ -50,11 +58,7 @@ let roomClass = [
 // check student va in infor
 function showInfo() {
   for (let i = 0; i < roomClass.length; i++) {
-    if (roomClass[i].teacher === undefined) {
-      console.log(roomClass[i].className);
-      console.log(roomClass[i].teacherName);
-      console.log(roomClass[i].students);
-    }
+    roomClass[i].display();
     console.log("---------------------------------");
   }
 }
@@ -67,6 +71,7 @@ function joinClass(room) {
     if (students[i].className === undefined && room.students.length < 5) {
       room.students.push(students[i]);
       students[i].className = room.className;
+      // students[i].joinClassOfStudent(roomClassName)
     }
   }
 }

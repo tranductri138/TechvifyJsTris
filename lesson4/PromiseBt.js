@@ -9,26 +9,33 @@ function creatEmail() {
 }
 creatEmail();
 // console.log(arrEmail);
+
+// arrEmail.push(123);
 const arrEmailHasBeen = [];
 
-const sendEmail = (email) => {
+const sendEmail = async (email) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(console.log(`${email} has been sent`));
+      //   reject(console.log(err.message));
     }, 2000);
   });
 };
 
 async function sendEmailFor10User() {
   for (let i = 0; i < arrEmail.length; i++) {
-    sendEmail(arrEmail[i]);
-    arrEmailHasBeen.push(arrEmail[i]);
+    let email = sendEmail(arrEmail[i]);
+    // sendEmail(arrEmail[i]);
+    // arrEmailHasBeen.push(arrEmail[i]);
+    arrEmailHasBeen.push(email);
   }
   //   let a = await arrEmailHasBeen;
   let rs = await Promise.all(arrEmailHasBeen);
   // in succuces
   console.log("All email send success !");
-//   console.log(rs);
+  //   console.log(rs);
   return rs;
 }
-sendEmailFor10User();
+sendEmailFor10User().catch(function (err) {
+  console.log(err);
+});

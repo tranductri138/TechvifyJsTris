@@ -1,10 +1,10 @@
 # TechvifyJsTris
 
-Ngày thứ 3 :v :v :v 8 tháng 9 
+Ngày thứ 4 :v :v :v 9 tháng 9 
 
- 
-đọc và làm ví dụ về extends class trong Javascript
-	
-Sử dụng try, catch, final
+
 	
 Đọc về promise
+bài tập về promise
+// 10 message để gửi đi (mỗi message gửi mất 2s)
+// sau khi gửi thành công 10 messages thì thông báo đã gửi thành công bao nhiêu message

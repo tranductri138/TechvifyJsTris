@@ -10,6 +10,7 @@ function creatEmail() {
 creatEmail();
 // console.log(arrEmail);
 
+// line is bug to run reject in promise
 arrEmail.push(123);
 const arrEmailHasBeen = [];
 

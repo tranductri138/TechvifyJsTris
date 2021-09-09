@@ -10,13 +10,19 @@ function creatEmail() {
 creatEmail();
 // console.log(arrEmail);
 
-// arrEmail.push(123);
+arrEmail.push(123);
 const arrEmailHasBeen = [];
 
+let count = 0;
 const sendEmail = async (email) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(console.log(`${email} has been sent`));
+      if (typeof email === "string") {
+        count++;
+        resolve(`${email} has been sent`, count);
+      } else {
+        reject(new Error("This is not an email"));
+      }
       //   reject(console.log(err.message));
     }, 2000);
   });
@@ -32,10 +38,19 @@ async function sendEmailFor10User() {
   //   let a = await arrEmailHasBeen;
   let rs = await Promise.all(arrEmailHasBeen);
   // in succuces
-  console.log("All email send success !");
+  //   console.log("All email send success !");
   //   console.log(rs);
-  return rs;
 }
-sendEmailFor10User().catch(function (err) {
-  console.log(err);
-});
+sendEmailFor10User()
+  .then(function (emailHasbeen) {
+    console.log(`successfully sent ${count} email`);
+    console.log(emailHasbeen);
+  })
+  .catch(function (err) {
+    console.log(`successfully sent ${count} email`);
+    console.log(err.message);
+  })
+  .finally(function () {
+    console.log("All email send success !");
+    // console.log("Done");
+  });

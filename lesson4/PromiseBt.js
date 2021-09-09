@@ -19,9 +19,9 @@ const sendEmail = async (email) => {
     setTimeout(() => {
       if (typeof email === "string") {
         count++;
-        resolve(`${email} has been sent`, count);
+        resolve(`${email} has been sent`);
       } else {
-        reject(new Error("This is not an email"));
+        reject(new Error(`This - ${email}  - is not an email`));
       }
       //   reject(console.log(err.message));
     }, 2000);

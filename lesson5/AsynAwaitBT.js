@@ -34,8 +34,10 @@ const randomBankNumber = () => {
   //   console.log(typeof a);
   return a;
 };
+
 // create Bank
 const arrBank = [];
+
 class BankAccount {
   constructor(accName, bankNumber) {
     this.amount = 500;

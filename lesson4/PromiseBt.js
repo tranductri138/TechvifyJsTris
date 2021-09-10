@@ -11,7 +11,19 @@ creatEmail();
 // console.log(arrEmail);
 
 // line is bug to run reject in promise
-arrEmail.push(123);
+function createBug(num) {
+  if (num === 1) {
+    arrEmail[6] = 123;
+  } else if (num === 2) {
+    arrEmail.push(123);
+  } else {
+    for (let i = 0; i < arrEmail.length; i++) {
+      arrEmail[i] = null;
+    }
+  }
+}
+// createBug(1);
+
 const arrEmailHasBeen = [];
 
 let count = 0;
@@ -20,7 +32,7 @@ const sendEmail = async (email) => {
     setTimeout(() => {
       if (typeof email === "string") {
         count++;
-        resolve(`${email} has been sent`);
+        resolve(console.log(`${email} has been sent`));
       } else {
         reject(new Error(`This - ${email}  - is not an email`));
       }
@@ -41,11 +53,13 @@ async function sendEmailFor10User() {
   // in succuces
   //   console.log("All email send success !");
   //   console.log(rs);
+  return rs;
 }
 sendEmailFor10User()
-  .then(function (emailHasbeen) {
+  // func then se nhan ket qua cua ngay cai ham truoc no
+  .then(function () {
     console.log(`successfully sent ${count} email`);
-    console.log(emailHasbeen);
+    // console.log(emailHasbeen);
   })
   .catch(function (err) {
     console.log(`successfully sent ${count} email`);

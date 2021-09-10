@@ -1,9 +1,8 @@
 # TechvifyJsTris
 
-Ngày thứ 4 :v :v :v 9 tháng 9 
+Ngày thứ 5 :v :v :v 10 tháng 9 
 	
-Đọc về promise
-bài tập về promise
+bài tập về promise và async await
 
 
 

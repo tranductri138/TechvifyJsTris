@@ -55,7 +55,7 @@ class BankAccount {
     return new Promise((resolve, reject) => {
       if (this.amount >= num) {
         this.amount = this.amount - num;
-        resolve(this.amount);
+        resolve("Success");
       } else {
         reject(`${this.accName} not enough money to make the transaction`);
       }

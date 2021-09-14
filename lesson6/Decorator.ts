@@ -29,3 +29,23 @@ class DecoratorByTris {
 // được decorator
 // Syntax @expression
 // expresion : trỏ tới 1 func sẽ được gọi lúc run-time
+
+
+// các độ ưu tiên của decorator 
+// class decorator - ưu tiên 4
+// method decorator - ưu tiên 2 
+// accesor or property decorator - ưu tiên 3 
+// parameter decorator - ưu tiên 1
+
+// nếu decorator áp dụng cho constructor class 
+// thì độ ưu tiên decorator như sau 
+// 1 parameter
+// 2 method
+// 3 accessor or property decorator 
+// 4 class decorator 
+
+
+// Class decorator được khai báo ngay trước khai báo class
+// Class decorator được áp dụng cho constructor của class
+// và có thể được sử dụng để theo dõi , sửa đổi or thay thế 
+// cho định nghĩa class 

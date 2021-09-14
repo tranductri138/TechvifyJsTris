@@ -5,8 +5,10 @@ const router = express.Router();
 
 router.get('/ping', controller.serverHealthCheck);
 
-router.post("/product", controller.createProduct)
 
 router.get("/product", controller.searchProduct)
+
+router.post("/product", controller.createProduct)
+
 
 export = router;

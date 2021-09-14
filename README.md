@@ -1,6 +1,6 @@
 # TechvifyJsTris
 
-Ngày thứ 6 :v :v :v 14 tháng 9 
+Ngày thứ 7 :v :v :v 14 tháng 9 
 	
 Sử dụng typescript
 

@@ -3,10 +3,10 @@ import { Product } from '../models/product';
 
 
 let product1 = new Product(1, "laptop", 100, "this is laptop")
-let product2 = new Product(2, "cup", 100, "this is laptop")
-let product3 = new Product(3, "chair", 100, "this is laptop")
-let product4 = new Product(4, "keyboard", 100, "this is laptop")
-let product5 = new Product(5, "mouse", 100, "this is laptop")
+let product2 = new Product(2, "cup", 100, "this is a cup")
+let product3 = new Product(3, "chair", 100, "this is a chair")
+let product4 = new Product(4, "keyboard", 100, "this is keyboard")
+let product5 = new Product(5, "mouse", 100, "this is mouse")
 const arrProduct: Product[] = [product1, product2, product3, product4, product5]
 const serverHealthCheck = (req: Request, res: Response, next: NextFunction) => {
     return res.status(200).json({
@@ -38,6 +38,10 @@ const createProduct = (req: Request, res: Response) => {
     }
 }
 
+const updateProduct = (req: Request, res: Response) => {
+    
+}
+
 const searchProduct = (req: Request, res: Response) => {
     let name = <string>req.query.name
     let a = arrProduct.filter((item) => {
@@ -45,7 +49,11 @@ const searchProduct = (req: Request, res: Response) => {
             return item
         }
     })
-    res.status(200).json(a)
+    if (a.length > 0) {
+        res.status(200).json(a)
+    } else {
+        res.status(404).json({ message: "Not found" })
+    }
 }
 
 export default { serverHealthCheck, createProduct, searchProduct };

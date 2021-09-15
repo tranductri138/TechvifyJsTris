@@ -1,8 +1,12 @@
 # TechvifyJsTris
 
-Ngày thứ 7 :v :v :v 14 tháng 9 
+Ngày thứ 7 :v :v :v 15 tháng 9 
 	
 Sử dụng typescript
+
+Thiết kế thêm về mô hình đầy đủ 
+router-->controller-->service-->repository
+
 
 Product: 
 

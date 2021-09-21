@@ -1,4 +1,4 @@
-class Product {
+class Product11 {
     private id: number;
     private name: string
     private price: number;
@@ -46,4 +46,3 @@ class Product {
         this.description = description;
     }
 }
-export { Product}

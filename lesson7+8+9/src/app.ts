@@ -4,6 +4,10 @@ import bodyParser from "body-parser"
 import logging from "./config/logging"
 import config from "./config/config"
 import sampleRoutes from "./routes/sample"
+import "reflect-metadata";
+
+
+
 
 
 const NAMESPACE = "Server"
